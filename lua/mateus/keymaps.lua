@@ -16,4 +16,4 @@ keymap.set('n', '<leader>fb', builtin.buffers, {})
 keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
 --Line numbers
-vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
+keymap.set('n', '<leader>h', ':nohlsearch<CR>')

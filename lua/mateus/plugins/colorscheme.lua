@@ -1,4 +1,4 @@
-tokyonight = { 
+local tokyonight = {
    {
      "LazyVim/LazyVim",
      opts = {
@@ -6,7 +6,7 @@ tokyonight = {
      },
    },
    {
-     "folke/tokyonight.nvim", 
+     "folke/tokyonight.nvim",
      opts = {
        lazy = false,
        transparent = true,
@@ -19,7 +19,7 @@ tokyonight = {
    }
  }
 
-nightly = {
+local nightly = {
   "Alexis12119/nightly.nvim",
   opts = {
     colorscheme = "nightly",

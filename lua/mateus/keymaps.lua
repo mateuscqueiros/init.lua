@@ -15,5 +15,4 @@ keymap.set('n', '<leader>fg', builtin.live_grep, {})
 keymap.set('n', '<leader>fb', builtin.buffers, {})
 keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
---Line numbers
-keymap.set('n', '<leader>h', ':nohlsearch<CR>')
+keymap.set('n', '<leader>f', ':nohlsearch<CR>')

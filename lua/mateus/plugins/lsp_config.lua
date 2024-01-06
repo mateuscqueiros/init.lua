@@ -7,10 +7,10 @@ return {
       end
     },
     {
-    "williamboman/mason-lspconfig.nvim",
+      "williamboman/mason-lspconfig.nvim",
       config = function ()
         require("mason-lspconfig").setup({
-          ensure_installed = { "lua_ls" }
+          ensure_installed = { "lua_ls", "tsserver" }
         })
       end
     },
@@ -31,8 +31,11 @@ return {
           keymap.set('n', 'K', buf.hover, {})
         end
 
+        local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
         lsp_config.lua_ls.setup {
           on_attach = on_attach,
+          capabilities = capabilities,
           settings = {
             Lua = {
               diagnostics = {
@@ -40,6 +43,11 @@ return {
               }
             }
           }
+        }
+
+        lsp_config.tsserver.setup {
+          on_attach = on_attach,
+          capabilities = capabilities,
         }
       end
     }

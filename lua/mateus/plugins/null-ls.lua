@@ -7,7 +7,7 @@ return {
       sources = {
         -- null_ls.builtins.diagnostics.eslint,
         null_ls.builtins.formatting.prettier.with {
-          command = "/home/mateus/.npm-packages/lib/node_modules/prettier/bin",
+          command = "$HOME/.npm-packages/lib/node_modules/prettier/bin/prettier.cjs",
           extra_filetypes = { "toml" },
         },
       },

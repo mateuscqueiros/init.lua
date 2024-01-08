@@ -17,6 +17,7 @@ These are my config files for my current environment in Neovim. Packages need to
 - harpoon
 - nvim-autopairs
 - vim-surround
+- noice
 
 ## Packages (may be forgetting some)
 

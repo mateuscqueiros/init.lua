@@ -50,15 +50,6 @@ return {
           capabilities = capabilities,
         }
 
-        -- lsp_config.prettier.setup {
-        --   on_attach = on_attach,
-        --   capabilities = capabilities,
-        -- }
-
-        -- lsp_config.prettierd.setup {
-        --   on_attach = on_attach,
-        --   capabilities = capabilities,
-        -- }
       end
     }
   }

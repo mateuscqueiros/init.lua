@@ -4,23 +4,28 @@ These are my config files for my current environment in Neovim. Packages need to
 
 ## Plugins
 
-- Lazy.nvim (plugin manager)
+- lazy.nvim (plugin manager)
 - nvim-tree
-- Telescope
-- Treesitter
-- Tokyonight (theme)
-- Mason plugins/nvim-lspconfig (LSP config)
-- LuaSnip/cmp\_luasnip/friendly-snippets/cmp-nvim-lsp (autocomplete snippets)
-- Lualine (status bar)
+- fugitive
+- telescope
+- treesitter
+- tokyonight (moon style)
+- mason plugins/nvim-lspconfig/cmp-nvim-lsp (LSP config)
+- luaSnip/cmp_luasnip/friendly-snippets (autocomplete snippets)
+- lualine (status bar)
 - nvim-web-devicons
-- Harpoon
+- harpoon
 - nvim-autopairs
+- vim-surround
 
-## Packages
-- Node/NPM
-- Git
-- Typescript servers and other language servers
+## Packages (may be forgetting some)
+
+- node/npm
+- git
+- Typescript and other language servers
 - ripgrep (Telescope live grep)
+- Prettier and ESLint
 
 ## Other
+
 - vim-be-good (games for practicing vim motions)

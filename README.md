@@ -18,6 +18,7 @@ These are my config files for my current environment in Neovim. Packages need to
 - nvim-autopairs
 - vim-surround
 - noice
+- nvim-notify
 
 ## Packages (may be forgetting some)
 

@@ -8,7 +8,7 @@ return {
     },
     {
       "williamboman/mason-lspconfig.nvim",
-      config = function ()
+      config = function()
         require("mason-lspconfig").setup({
           ensure_installed = { "lua_ls", "tsserver" }
         })
@@ -49,6 +49,16 @@ return {
           on_attach = on_attach,
           capabilities = capabilities,
         }
+
+        -- lsp_config.prettier.setup {
+        --   on_attach = on_attach,
+        --   capabilities = capabilities,
+        -- }
+
+        -- lsp_config.prettierd.setup {
+        --   on_attach = on_attach,
+        --   capabilities = capabilities,
+        -- }
       end
     }
   }

@@ -37,4 +37,17 @@ local solarized = {
   end,
 }
 
-return tokyonight
+local onedark = {
+  'navarasu/onedark.nvim',
+  config = function() 
+    local onedarktheme = require("onedark")
+
+    onedarktheme.setup({
+      style = "deep",
+    })
+    onedarktheme.load()
+
+  end
+}
+
+return onedark

@@ -1,23 +1,5 @@
 return {
   {
-    'windwp/nvim-ts-autotag',
-    config = function()
-      vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
-        vim.lsp.diagnostic.on_publish_diagnostics,
-        {
-          underline = true,
-          virtual_text = {
-            spacing = 5,
-            severity_limit = 'Warning',
-          },
-          update_in_insert = true,
-        }
-      )
-
-      require('nvim-ts-autotag').setup()
-    end
-  },
-  {
     "windwp/nvim-autopairs",
     event = "InsertEnter",
     opts = {},
@@ -32,16 +14,28 @@ return {
       vim.o.timeout = true
       vim.o.timeoutlen = 1000
     end,
-    opts = {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    }
   }, {
-    "ThePrimeagen/vim-be-good"
+    "ThePrimeagen/vim-be-good",
+    "junegunn/fzf.vim",
+  },
+  {
+    "junegunn/fzf",
   },
   {
     "folke/neodev.nvim",
-    opts = {}
+  },
+  {
+    'akinsho/bufferline.nvim',
+    version = "*",
+    dependencies = 'nvim-tree/nvim-web-devicons',
+    config = function()
+      local keymap = vim.keymap
+
+      vim.opt.termguicolors = true
+      require("bufferline").setup{}
+
+      keymap.set("n", "<leader>n", "<cmd>BufferLineCycleNext<CR>")
+      keymap.set("n", "<leader>b", "<cmd>BufferLineCyclePrev<CR>")
+    end
   }
 }

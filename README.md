@@ -9,7 +9,7 @@ These are my config files for my current environment in Neovim. Packages need to
 - fugitive
 - telescope
 - treesitter
-- tokyonight (moon style)
+- one dark (deep)
 - mason plugins/nvim-lspconfig/cmp-nvim-lsp (LSP config)
 - luaSnip/cmp_luasnip/friendly-snippets (autocomplete snippets)
 - lualine (status bar)
@@ -19,6 +19,8 @@ These are my config files for my current environment in Neovim. Packages need to
 - vim-surround
 - noice
 - nvim-notify
+- fzf
+- bufferline
 
 ## Packages (may be forgetting some)
 
@@ -27,6 +29,7 @@ These are my config files for my current environment in Neovim. Packages need to
 - Typescript and other language servers
 - ripgrep (Telescope live grep)
 - Prettier and ESLint
+- fzf
 
 ## Other
 

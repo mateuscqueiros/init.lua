@@ -18,6 +18,7 @@ return {
       "neovim/nvim-lspconfig",
       config = function()
         local lsp_config = require("lspconfig")
+
         local on_attach = function(_, _)
           local keymap = vim.keymap
           local buf = vim.lsp.buf
@@ -29,6 +30,15 @@ return {
           keymap.set('n', 'gi', buf.implementation, {})
           keymap.set('n', 'gr', require('telescope.builtin').lsp_references, {})
           keymap.set('n', 'K', buf.hover, {})
+        end
+
+        local function organize_imports()
+          local params = {
+            command = "_typescript.organizeImports",
+            arguments = {vim.api.nvim_buf_get_name(0)},
+            title = ""
+          }
+          vim.lsp.buf.execute_command(params)
         end
 
         local capabilities = require('cmp_nvim_lsp').default_capabilities()
@@ -53,6 +63,12 @@ return {
         lsp_config.tsserver.setup {
           on_attach = on_attach,
           capabilities = capabilities,
+          commands = {
+            FixImports = {
+              organize_imports,
+              description = "Organize imports"
+            }
+          }
         }
 
       end

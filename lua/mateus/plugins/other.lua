@@ -1,12 +1,11 @@
 return {
   {
-    "windwp/nvim-autopairs",
-    event = "InsertEnter",
-    opts = {},
-  },
-  {
     "tpope/vim-surround",
     "christoomey/vim-tmux-navigator",
+    "folke/neodev.nvim",
+    "junegunn/fzf",
+    "ThePrimeagen/vim-be-good",
+    "tpope/vim-fugitive"
   }, {
     "folke/which-key.nvim",
     event = "VeryLazy",
@@ -14,28 +13,15 @@ return {
       vim.o.timeout = true
       vim.o.timeoutlen = 1000
     end,
+  },
+  {
+    "windwp/nvim-autopairs",
+    event = "InsertEnter",
+    opts = {},
   }, {
-    "ThePrimeagen/vim-be-good",
-    "junegunn/fzf.vim",
-  },
-  {
-    "junegunn/fzf",
-  },
-  {
-    "folke/neodev.nvim",
-  },
-  {
-    'akinsho/bufferline.nvim',
-    version = "*",
-    dependencies = 'nvim-tree/nvim-web-devicons',
-    config = function()
-      local keymap = vim.keymap
-
-      vim.opt.termguicolors = true
-      require("bufferline").setup{}
-
-      keymap.set("n", "<leader>n", "<cmd>BufferLineCycleNext<CR>")
-      keymap.set("n", "<leader>b", "<cmd>BufferLineCyclePrev<CR>")
-    end
+    "ThePrimeagen/harpoon",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    }
   }
 }

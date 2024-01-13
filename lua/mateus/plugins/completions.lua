@@ -11,16 +11,11 @@ return {
     },
     config = function()
       local cmp = require("cmp")
+      local keymaps = require("mateus.keymaps").cmp_mapping
 
       require("luasnip.loaders.from_vscode").lazy_load()
       cmp.setup({
-         mapping = cmp.mapping.preset.insert({
-          ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-          ['<C-f>'] = cmp.mapping.scroll_docs(4),
-          ['<C-o>'] = cmp.mapping.complete(),
-          ['<C-v>'] = cmp.mapping.abort(),
-          ['<CR>'] = cmp.mapping.confirm({ select = true }),
-        }),
+         mapping = cmp.mapping.preset.insert(keymaps),
         snippet = {
           expand = function(args)
             require('luasnip').lsp_expand(args.body)
@@ -50,8 +45,8 @@ return {
         },
       })
 
-      vim.api.nvim_set_hl(0, "PmenuSel", { bg = "#282C34", fg = "NONE" })
-      vim.api.nvim_set_hl(0, "Pmenu", { fg = "#C5CDD9", bg = "#22252A" })
+      vim.api.nvim_set_hl(0, "PmenuSel", { bg = "NONE", fg = "NONE" })
+      vim.api.nvim_set_hl(0, "Pmenu", { fg = "NONE", bg = "NONE" })
 
       vim.api.nvim_set_hl(0, "CmpItemAbbrDeprecated", { fg = "#7E8294", bg = "NONE", strikethrough = true })
       vim.api.nvim_set_hl(0, "CmpItemAbbrMatch", { fg = "#82AAFF", bg = "NONE", bold = true })

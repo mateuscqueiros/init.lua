@@ -19,19 +19,7 @@ return {
       config = function()
         local lsp_config = require("lspconfig")
 
-        local on_attach = function(_, _)
-          local keymap = vim.keymap
-          local buf = vim.lsp.buf
-
-          keymap.set('n', '<leader>rn', buf.rename, {})
-          keymap.set('n', '<leader>ca', buf.code_action, {})
-
-          keymap.set('n', 'gd', buf.definition, {})
-          keymap.set('n', 'gi', buf.implementation, {})
-          keymap.set('n', 'gr', require('telescope.builtin').lsp_references, {})
-          keymap.set('n', 'K', buf.hover, {})
-        end
-
+        local on_attach = require("mateus.keymaps").on_attach
         local function organize_imports()
           local params = {
             command = "_typescript.organizeImports",

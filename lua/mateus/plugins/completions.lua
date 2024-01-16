@@ -11,11 +11,18 @@ return {
     },
     config = function()
       local cmp = require("cmp")
-      local keymaps = require("mateus.keymaps").cmp_mapping
 
       require("luasnip.loaders.from_vscode").lazy_load()
       cmp.setup({
-         mapping = cmp.mapping.preset.insert(keymaps),
+        mapping = cmp.mapping.preset.insert({
+          ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+          ['<Tab>'] = cmp.mapping.select_next_item(),
+          ['<S-Tab>'] = cmp.mapping.select_prev_item(),
+          ['<C-f>'] = cmp.mapping.scroll_docs(4),
+          ['<C-o>'] = cmp.mapping.complete(),
+          ['<C-v>'] = cmp.mapping.abort(),
+          ['<CR>'] = cmp.mapping.confirm({ select = true }),
+        }),
         snippet = {
           expand = function(args)
             require('luasnip').lsp_expand(args.body)
@@ -28,7 +35,9 @@ return {
             { name = 'buffer' }
           }),
         window = {
-          completion = cmp.config.window.bordered(),
+          completion = cmp.config.window.bordered({
+            winhighlight = "Normal:PMenu,FloatBorder:PMenu,CursorLine:PmenuSel,Search:None"
+          }),
           documentation = cmp.config.window.bordered(),
         },
         formatting = {
@@ -45,8 +54,8 @@ return {
         },
       })
 
-      vim.api.nvim_set_hl(0, "PmenuSel", { bg = "NONE", fg = "NONE" })
-      vim.api.nvim_set_hl(0, "Pmenu", { fg = "NONE", bg = "NONE" })
+      -- vim.api.nvim_set_hl(0, "PmenuSel", { bg = "#FFFFFF", fg = "#FFFFFF" })
+      -- vim.api.nvim_set_hl(0, "Pmenu", { fg = "#FFFFFF", bg = "#FFFFFF" })
 
       vim.api.nvim_set_hl(0, "CmpItemAbbrDeprecated", { fg = "#7E8294", bg = "NONE", strikethrough = true })
       vim.api.nvim_set_hl(0, "CmpItemAbbrMatch", { fg = "#82AAFF", bg = "NONE", bold = true })
@@ -60,7 +69,6 @@ return {
       vim.api.nvim_set_hl(0, "CmpItemKindText", { fg = "#C3E88D", bg = "#9FBD73" })
       vim.api.nvim_set_hl(0, "CmpItemKindEnum", { fg = "#C3E88D", bg = "#9FBD73" })
       vim.api.nvim_set_hl(0, "CmpItemKindKeyword", { fg = "#C3E88D", bg = "#9FBD73" })
-
       vim.api.nvim_set_hl(0, "CmpItemKindConstant", { fg = "#FFE082", bg = "#D4BB6C" })
       vim.api.nvim_set_hl(0, "CmpItemKindConstructor", { fg = "#FFE082", bg = "#D4BB6C" })
       vim.api.nvim_set_hl(0, "CmpItemKindReference", { fg = "#FFE082", bg = "#D4BB6C" })

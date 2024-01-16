@@ -2,28 +2,38 @@ local telescope_builtin = require('telescope.builtin')
 local mark = require("harpoon.mark")
 local ui = require("harpoon.ui")
 local term = require("harpoon.term")
-local cmp = require("cmp")
 
 local keymap = vim.keymap
 local buf = vim.lsp.buf
 
 keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
 keymap.set('v', 'K', ":m '<-1<CR>gv=gv")
+
 keymap.set("n", "<C-d>", "<C-d>zz")
 keymap.set("n", "<C-u>", "<C-u>zz")
+
 keymap.set('n', '<leader>h', ':nohlsearch<CR>')
+keymap.set('n', 'J', 'mzJ`z')
+
+keymap.set('x', '<leader>p', '\"_dP')
+keymap.set('n', '<leader>y', '\"+y')
+keymap.set('v', '<leader>y', '\"+y')
+keymap.set('n', '<leader>Y', '\"+Y')
+
+keymap.set('n', '<leader>d', '\"_d')
+keymap.set('v', '<leader>d', '\"_d')
+
 keymap.set('n', '+', '<C-a>')
 keymap.set('n', '-', '<C-x>')
+
+keymap.set("n", "<leader>o", "o<Esc>")
+keymap.set("n", "<leader>O", "O<Esc>")
 
 -- Telescope
 keymap.set('n', '<leader>ff', telescope_builtin.find_files, {})
 keymap.set('n', '<leader>fg', telescope_builtin.live_grep, {})
 keymap.set('n', '<leader>fb', telescope_builtin.buffers, {})
 keymap.set('n', '<leader>fh', telescope_builtin.help_tags, {})
-
--- Bufferline
-keymap.set("n", "<C-z>", "<cmd>BufferLineCyclePrev<CR>")
-keymap.set("n", "<C-x>", "<cmd>BufferLineCycleNext<CR>")
 
 -- Harpoon
 keymap.set("n", "<leader>A", mark.add_file)
@@ -59,17 +69,8 @@ local on_attach = function()
   keymap.set('n', 'K', buf.hover, {})
 end
 
-local cmp_mapping = {
-  ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-  ['<C-f>'] = cmp.mapping.scroll_docs(4),
-  ['<C-o>'] = cmp.mapping.complete(),
-  ['<C-v>'] = cmp.mapping.abort(),
-  ['<CR>'] = cmp.mapping.confirm({ select = true }),
-}
-
 local exported = {
   on_attach = on_attach,
-  cmp_mapping = cmp_mapping
 }
 
 return exported

@@ -39,7 +39,7 @@ local solarized = {
 
 local onedark = {
   'navarasu/onedark.nvim',
-  config = function() 
+  config = function()
     local onedarktheme = require("onedark")
 
     onedarktheme.setup({

@@ -7,7 +7,8 @@ return {
     "ThePrimeagen/vim-be-good",
     "tpope/vim-fugitive",
     "ThePrimeagen/harpoon",
-  },   {
+  },
+  {
     "windwp/nvim-autopairs",
     event = "InsertEnter",
     opts = {},

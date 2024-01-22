@@ -14,31 +14,31 @@ local tokyonight = {
       styles = {
         sidebars = "transparent",
         floats = "transparent",
-      }
-    }
-  }
+      },
+    },
+  },
 }
 
 local nightly = {
   "Alexis12119/nightly.nvim",
   opts = {
     colorscheme = "nightly",
-  }
+  },
 }
 
 local solarized = {
-  'maxmx03/solarized.nvim',
+  "maxmx03/solarized.nvim",
   lazy = false,
   priority = 1000,
   config = function()
-    vim.o.background = 'light' -- or 'light'
+    vim.o.background = "light" -- or 'light'
 
-    vim.cmd.colorscheme 'solarized'
+    vim.cmd.colorscheme("solarized")
   end,
 }
 
 local onedark = {
-  'navarasu/onedark.nvim',
+  "navarasu/onedark.nvim",
   config = function()
     local onedarktheme = require("onedark")
 
@@ -46,8 +46,7 @@ local onedark = {
       style = "deep",
     })
     onedarktheme.load()
-
-  end
+  end,
 }
 
 return onedark

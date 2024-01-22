@@ -6,48 +6,39 @@ return {
       local util = require("lspconfig/util")
 
       local on_attach = require("mateus.keymaps").on_attach
-      local function organize_imports()
-        local params = {
-          command = "_typescript.organizeImports",
-          arguments = { vim.api.nvim_buf_get_name(0) },
-          title = ""
-        }
-        vim.lsp.buf.execute_command(params)
-      end
+      local organize_imports = require("mateus.commands").organize_imports
 
-      local capabilities = require('cmp_nvim_lsp').default_capabilities()
+      local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
       require("neodev").setup({})
 
-      lsp_config.lua_ls.setup {
+      lsp_config.lua_ls.setup({
         on_attach = on_attach,
         capabilities = capabilities,
         settings = {
           La = {
-
-
             diagnostics = {
-              globals = { 'vim' }
+              globals = { "vim" },
             },
             completion = {
-              callSnipet = "Replace"
-            }
-          }
-        }
-      }
+              callSnipet = "Replace",
+            },
+          },
+        },
+      })
 
-      lsp_config.tsserver.setup {
+      lsp_config.tsserver.setup({
         on_attach = on_attach,
         capabilities = capabilities,
         commands = {
-          FixImports = {
+          FixImp = {
             organize_imports,
-            description = "Organize imports"
-          }
-        }
-      }
+            description = "Organize imports",
+          },
+        },
+      })
 
-      lsp_config.gopls.setup {
+      lsp_config.gopls.setup({
         on_attach = on_attach,
         capabilities = capabilities,
         cmd = { "gopls" },
@@ -58,25 +49,23 @@ return {
             completeUnimported = true,
             usePlaceholders = true,
             analyses = {
-              unusedparams = true
-            }
-          }
-        }
-      }
-    end
+              unusedparams = true,
+            },
+          },
+        },
+      })
+    end,
   },
   {
     "williamboman/mason.nvim",
-    config = function()
-      require("mason").setup()
-    end,
+    config = function() require("mason").setup() end,
   },
   {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "tsserver", "gopls", "html", "prettier" }
+        ensure_installed = { "lua_ls", "tsserver", "gopls", "html" },
       })
-    end
+    end,
   },
 }

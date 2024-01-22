@@ -6,4 +6,3 @@ return {
     vim.o.timeoutlen = 1000
   end,
 }
-

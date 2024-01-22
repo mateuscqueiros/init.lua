@@ -1,4 +1,6 @@
 local telescope_builtin = require('telescope.builtin')
+local telescope_actions = require("telescope.actions");
+
 local mark = require("harpoon.mark")
 local ui = require("harpoon.ui")
 local term = require("harpoon.term")
@@ -34,6 +36,7 @@ keymap.set('n', '<leader>ff', telescope_builtin.find_files, {})
 keymap.set('n', '<leader>fg', telescope_builtin.live_grep, {})
 keymap.set('n', '<leader>fb', telescope_builtin.buffers, {})
 keymap.set('n', '<leader>fh', telescope_builtin.help_tags, {})
+-- keymap.set('n', '<C-d>', telescope_actions.delete_buffer, {})
 
 -- Harpoon
 keymap.set("n", "<leader>A", mark.add_file)

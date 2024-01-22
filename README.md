@@ -21,6 +21,7 @@ These are my config files for my current environment in Neovim. Packages need to
 - nvim-notify
 - fzf
 - bufferline
+- conform
 
 ## Packages (may be forgetting some)
 

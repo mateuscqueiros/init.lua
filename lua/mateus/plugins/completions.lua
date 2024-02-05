@@ -16,6 +16,9 @@ return {
       require("luasnip.loaders.from_vscode").lazy_load()
 
       cmp.setup({
+        performance = {
+          max_view_entries = 7,
+        },
         mapping = cmp.mapping.preset.insert(keymaps.cmp_mapping(cmp)),
         snippet = {
           expand = function(args) require("luasnip").lsp_expand(args.body) end,

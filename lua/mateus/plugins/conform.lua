@@ -7,9 +7,15 @@ return {
     conform.setup({
       formatters_by_ft = {
         lua = { "stylua" },
-        javascript = { { "prettier", "prettierd" } },
-        javascriptreact = { { "prettier", "prettierd" } },
-        typescriptreact = { { "prettier", "prettierd" } },
+        javascript = { "prettier" },
+        javascriptreact = { "prettier" },
+        typescriptreact = { "prettier" },
+        html = { "prettier" },
+        css = { "prettier" },
+      },
+      format_on_save = {
+        lsp_fallback = true,
+        timeout_ms = 500,
       },
     })
 

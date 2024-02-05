@@ -10,14 +10,13 @@ These are my config files for my current environment in Neovim. Packages need to
 - telescope
 - treesitter
 - one dark (deep)
-- mason plugins/nvim-lspconfig/cmp-nvim-lsp (LSP config)
-- luaSnip/cmp_luasnip/friendly-snippets (autocomplete snippets)
-- lualine (status bar)
+- mason.nvim/mason-lspconfig.nvim/nvim-lspconfig/cmp-nvim-lsp (LSP config)
+- luaSnip/cmp_luasnip/friendly-snippets/lsp-kind (autocomplete snippets)
+- lualine
 - nvim-web-devicons
 - harpoon
 - nvim-autopairs
 - vim-surround
-- noice
 - nvim-notify
 - fzf
 - bufferline
@@ -27,9 +26,9 @@ These are my config files for my current environment in Neovim. Packages need to
 
 - node/npm
 - git
-- Typescript and other language servers
-- ripgrep (Telescope live grep)
-- Prettier and ESLint
+- tsserver (npm)
+- ripgrep
+- prettier/eslint
 - fzf
 
 ## Other

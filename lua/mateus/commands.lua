@@ -4,7 +4,9 @@ local function organize_imports()
     arguments = { vim.api.nvim_buf_get_name(0) },
     title = "Organize Imports",
   }
-  vim.lsp.buf.execute_command(params)
+  if vim.bo.filetype ~= "css" and vim.bo.filetype ~= "html" then
+    vim.lsp.buf.execute_command(params)
+  end
 end
 
 return {

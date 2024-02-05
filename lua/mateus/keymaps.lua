@@ -28,10 +28,10 @@ keymap.set("n", "<leader>o", "o<Esc>")
 keymap.set("n", "<leader>O", "O<Esc>")
 
 -- Telescope
-keymap.set("n", "<leader>ff", telescope_builtin.find_files, {})
-keymap.set("n", "<leader>fg", telescope_builtin.live_grep, {})
-keymap.set("n", "<leader>fb", telescope_builtin.buffers, {})
-keymap.set("n", "<leader>fh", telescope_builtin.help_tags, {})
+keymap.set("n", "<leader>ff", telescope_builtin.fd)
+keymap.set("n", "<leader>fg", telescope_builtin.live_grep)
+keymap.set("n", "<leader>fb", telescope_builtin.buffers)
+keymap.set("n", "<leader>fh", telescope_builtin.help_tags)
 
 -- Harpoon
 keymap.set("n", "<leader>A", mark.add_file)

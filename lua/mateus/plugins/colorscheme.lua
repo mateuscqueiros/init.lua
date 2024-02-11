@@ -1,3 +1,11 @@
+function ColorMyPencils(color)
+  color = color or "rose-pine"
+  vim.cmd.colorscheme(color)
+
+  -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+  -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+end
+
 local tokyonight = {
   {
     "LazyVim/LazyVim",
@@ -9,8 +17,8 @@ local tokyonight = {
     "folke/tokyonight.nvim",
     opts = {
       lazy = false,
-      transparent = true,
-      style = "moon",
+      transparent = false,
+      style = "night",
       styles = {
         sidebars = "transparent",
         floats = "transparent",
@@ -27,13 +35,17 @@ local nightly = {
 }
 
 local solarized = {
-  "maxmx03/solarized.nvim",
+  "craftzdog/solarized-osaka.nvim",
   lazy = false,
   priority = 1000,
+  opts = {
+    transparent = false,
+  },
   config = function()
-    vim.o.background = "light" -- or 'light'
-
-    vim.cmd.colorscheme("solarized")
+    require("solarized-osaka").setup({
+      transparent = false, -- Enable this to disable setting the background color
+    })
+    vim.cmd.colorscheme("solarized-osaka")
   end,
 }
 
@@ -49,4 +61,18 @@ local onedark = {
   end,
 }
 
-return onedark
+local rose_pine = {
+  "rose-pine/neovim",
+  name = "rose-pine",
+  config = function()
+    require("rose-pine").setup({
+      disable_background = false,
+    })
+
+    vim.cmd.colorscheme("rose-pine")
+
+    ColorMyPencils()
+  end,
+}
+
+return tokyonight

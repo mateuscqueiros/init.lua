@@ -7,6 +7,8 @@ local term = require("harpoon.term")
 local keymap = vim.keymap
 local buf = vim.lsp.buf
 
+keymap.set("t", "<Esc>", "<C-\\><C-n>")
+
 keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 

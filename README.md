@@ -5,13 +5,15 @@ These are my config files for my current environment in Neovim. Packages need to
 ## Plugins
 
 - lazy.nvim (plugin manager)
+- autotag
 - nvim-tree
 - fugitive
 - telescope
 - treesitter
 - one dark (deep)
-- mason.nvim/mason-lspconfig.nvim/nvim-lspconfig/cmp-nvim-lsp (LSP config)
-- luaSnip/cmp_luasnip/friendly-snippets/lsp-kind (autocomplete snippets)
+- better-ts-errors
+- mason.nvim/mason-lspconfig/nvim-lspconfig (LSP config)
+- luaSnip/cmp_luasnip/friendly-snippets/lsp-kind/cmp-nvim-lsp (autocomplete snippets)
 - lualine
 - nvim-web-devicons
 - harpoon
@@ -30,7 +32,3 @@ These are my config files for my current environment in Neovim. Packages need to
 - ripgrep
 - prettier/eslint
 - fzf
-
-## Other
-
-- vim-be-good (games for practicing vim motions)

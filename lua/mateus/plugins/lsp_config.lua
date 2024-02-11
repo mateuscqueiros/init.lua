@@ -38,23 +38,6 @@ return {
         },
       })
 
-      lsp_config.gopls.setup({
-        on_attach = on_attach,
-        capabilities = capabilities,
-        cmd = { "gopls" },
-        filetypes = { "go", "gomod", "gowork", "gotmpl" },
-        root_dir = util.root_pattern("go.work", "go.mod", ".git"),
-        settings = {
-          gopls = {
-            completeUnimported = true,
-            usePlaceholders = true,
-            analyses = {
-              unusedparams = true,
-            },
-          },
-        },
-      })
-
       lsp_config.html.setup({
         on_attach = on_attach,
         capabilities = capabilities,
@@ -74,7 +57,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "tsserver", "gopls", "html", "cssls" },
+        ensure_installed = { "lua_ls", "tsserver", "html", "cssls" },
       })
     end,
   },

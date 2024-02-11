@@ -1,7 +1,7 @@
 return {
   {
     "folke/noice.nvim",
-    enabled = false,
+    -- enabled = false,
     opts = function() end,
     dependencies = {
       "MunifTanjim/nui.nvim",

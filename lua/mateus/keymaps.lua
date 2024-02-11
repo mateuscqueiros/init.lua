@@ -49,12 +49,11 @@ keymap.set("n", "W", function() term.gotoTerminal(2) end)
 keymap.set("n", "R", function() term.gotoTerminal(3) end)
 keymap.set("n", "T", function() term.gotoTerminal(4) end)
 
--- Nvim-tree
-keymap.set("n", "<leader>ee", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" })
-keymap.set("n", "<leader>ef", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "Toggle file explorer on current file" })
-keymap.set("n", "<leader>ec", "<cmd>NvimTreeCollapse<CR>", { desc = "Collapse file explorer" })
-keymap.set("n", "<leader>er", "<cmd>NvimTreeFocus<CR>", { desc = "Refresh file explorer" })
-keymap.set("n", "<c-n>", ":NvimTreeFindFile<CR>")
+-- Neo tree
+keymap.set("n", "<C-b>", "<cmd>Neotree reveal<CR>")
+keymap.set("n", "<leader>gd", "<cmd>Neotree float reveal_file=<cfile> reveal_force_cwd<cr>")
+keymap.set("n", "<leader>b", "<cmd>Neotree toggle show buffers right<cr>")
+keymap.set("n", "<leader>s", "<cmd>Neotree float git_status<cr>")
 
 -- LSP Config
 local on_attach = function()
@@ -70,12 +69,13 @@ end
 local cmp_mapping = function(cmp)
   return {
     ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+    ["<C-s>"] = cmp.mapping.open_docs(),
     ["<C-f>"] = cmp.mapping.scroll_docs(4),
     ["<C-j>"] = cmp.mapping.select_next_item(),
     ["<C-k>"] = cmp.mapping.select_prev_item(),
     ["<C-o>"] = cmp.mapping.complete(),
     ["<C-v>"] = cmp.mapping.abort(),
-    ["<CR>"] = cmp.mapping.confirm({ select = true }),
+    ["<Tab>"] = cmp.mapping.confirm({ select = true }),
   }
 end
 

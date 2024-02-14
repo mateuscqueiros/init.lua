@@ -2,6 +2,7 @@ local telescope_builtin = require("telescope.builtin")
 
 local mark = require("harpoon.mark")
 local ui = require("harpoon.ui")
+local harpoon_tmux = require("harpoon.tmux")
 local term = require("harpoon.term")
 
 local keymap = vim.keymap
@@ -18,16 +19,17 @@ keymap.set("n", "<C-u>", "<C-u>zz")
 keymap.set("n", "<leader>h", ":nohlsearch<CR>")
 keymap.set("n", "J", "mzJ`z")
 
-keymap.set("x", "<leader>p", [["_dP]])
+keymap.set("x", "<leader>p", [["+p]])
 keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 keymap.set("n", "<leader>Y", [["+Y]])
-keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 keymap.set("n", "+", "<C-a>")
 keymap.set("n", "-", "<C-x>")
 
 keymap.set("n", "<leader>o", "o<Esc>")
 keymap.set("n", "<leader>O", "O<Esc>")
+
+keymap.set("n", "<A-v>", "<C-v>")
 
 -- Telescope
 keymap.set("n", "<leader>ff", telescope_builtin.fd)
@@ -42,18 +44,11 @@ keymap.set("n", "<leader>1", function() ui.nav_file(1) end)
 keymap.set("n", "<leader>2", function() ui.nav_file(2) end)
 keymap.set("n", "<leader>3", function() ui.nav_file(3) end)
 keymap.set("n", "<leader>4", function() ui.nav_file(4) end)
-keymap.set("n", "<leader>5", function() ui.nav_file(5) end)
-keymap.set("n", "<leader>6", function() ui.nav_file(6) end)
-keymap.set("n", "<leader>7", function() ui.nav_file(7) end)
 
-keymap.set("n", "Q", function() term.gotoTerminal(1) end)
-keymap.set("n", "W", function() term.gotoTerminal(2) end)
-keymap.set("n", "R", function() term.gotoTerminal(3) end)
-keymap.set("n", "T", function() term.gotoTerminal(4) end)
+keymap.set("n", "<leader>t1", function() ui.nav_file(4) end)
 
 -- Neo tree
 keymap.set("n", "<C-b>", "<cmd>Neotree reveal<CR>")
-keymap.set("n", "<leader>gd", "<cmd>Neotree float reveal_file=<cfile> reveal_force_cwd<cr>")
 keymap.set("n", "<leader>b", "<cmd>Neotree toggle show buffers right<cr>")
 keymap.set("n", "<leader>s", "<cmd>Neotree float git_status<cr>")
 
@@ -76,6 +71,7 @@ local cmp_mapping = function(cmp)
     ["<C-j>"] = cmp.mapping.select_next_item(),
     ["<C-k>"] = cmp.mapping.select_prev_item(),
     ["<C-o>"] = cmp.mapping.complete(),
+    ["<C-i>"] = cmp.mapping.complete(),
     ["<C-v>"] = cmp.mapping.abort(),
     ["<Tab>"] = cmp.mapping.confirm({ select = true }),
   }

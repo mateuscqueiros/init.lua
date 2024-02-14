@@ -10,7 +10,7 @@ These are my config files for my current environment in Neovim. Packages need to
 - fugitive
 - telescope
 - treesitter
-- one dark (deep)
+- tokyonight
 - better-ts-errors
 - mason.nvim/mason-lspconfig/nvim-lspconfig (LSP config)
 - luaSnip/cmp_luasnip/friendly-snippets/lsp-kind/cmp-nvim-lsp (autocomplete snippets)

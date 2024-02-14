@@ -4,7 +4,13 @@ return {
   config = function()
     require("telescope").setup({
       defaults = {
-        file_ignore_patterns = { "^node_modules/" },
+        file_ignore_patterns = {
+          "^node_modules/",
+          ".stylua.toml",
+          "package-lock.json",
+          "yarn.lock",
+          "lazy-lock.json",
+        },
       },
     })
   end,

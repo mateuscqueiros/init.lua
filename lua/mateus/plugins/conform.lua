@@ -19,15 +19,15 @@ return {
       },
     })
 
-    -- vim.api.nvim_create_autocmd("BufWritePre", {
-    --   pattern = "*",
-    --   callback = function(args)
-    --     local organizeImports = require("mateus.commands").organize_imports
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      pattern = "*",
+      callback = function(args)
+        local organizeImports = require("mateus.commands").organize_imports
 
-    --     conform.format({ bufnr = args.buf })
+        conform.format({ bufnr = args.buf })
 
-    --     organizeImports()
-    --   end,
-    -- })
+        organizeImports()
+      end,
+    })
   end,
 }

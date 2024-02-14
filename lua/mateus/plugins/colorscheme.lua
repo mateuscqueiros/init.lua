@@ -75,4 +75,10 @@ local rose_pine = {
   end,
 }
 
+local catppuccin = {
+  "catppuccin/nvim",
+  name = "catppuccin",
+  config = function() vim.cmd.colorscheme("catppuccin-mocha") end,
+}
+
 return tokyonight

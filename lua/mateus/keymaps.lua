@@ -2,8 +2,6 @@ local telescope_builtin = require("telescope.builtin")
 
 local mark = require("harpoon.mark")
 local ui = require("harpoon.ui")
-local harpoon_tmux = require("harpoon.tmux")
-local term = require("harpoon.term")
 
 local keymap = vim.keymap
 local buf = vim.lsp.buf
@@ -50,7 +48,7 @@ keymap.set("n", "<leader>t1", function() ui.nav_file(4) end)
 -- Neo tree
 keymap.set("n", "<C-b>", "<cmd>Neotree reveal<CR>")
 keymap.set("n", "<leader>b", "<cmd>Neotree toggle show buffers right<cr>")
-keymap.set("n", "<leader>s", "<cmd>Neotree float git_status<cr>")
+keymap.set("n", "<leader>gs", "<cmd>Neotree float git_status<cr>")
 
 -- LSP Config
 local on_attach = function()

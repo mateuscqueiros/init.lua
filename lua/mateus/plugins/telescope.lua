@@ -1,4 +1,7 @@
 return {
+  {
+    "junegunn/fzf",
+  },
   "nvim-telescope/telescope.nvim",
   tag = "0.1.5",
   config = function()

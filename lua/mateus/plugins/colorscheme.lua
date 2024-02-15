@@ -1,11 +1,3 @@
-function ColorMyPencils(color)
-  color = color or "rose-pine"
-  vim.cmd.colorscheme(color)
-
-  -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-  -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-end
-
 local tokyonight = {
   {
     "LazyVim/LazyVim",
@@ -17,13 +9,18 @@ local tokyonight = {
     "folke/tokyonight.nvim",
     opts = {
       lazy = false,
-      transparent = false,
-      style = "night",
-      styles = {
-        sidebars = "transparent",
-        floats = "transparent",
-      },
     },
+    config = function()
+      require("tokyonight").setup({
+        on_colors = function(colors) colors.border = "#787878" end,
+        transparent = false,
+        style = "night",
+        styles = {
+          sidebars = "transparent",
+          floats = "transparent",
+        },
+      })
+    end,
   },
 }
 
@@ -32,6 +29,10 @@ local nightly = {
   opts = {
     colorscheme = "nightly",
   },
+  config = function()
+    require("nightly").setup()
+    vim.cmd.colorscheme("nightly")
+  end,
 }
 
 local solarized = {
@@ -43,7 +44,7 @@ local solarized = {
   },
   config = function()
     require("solarized-osaka").setup({
-      transparent = false, -- Enable this to disable setting the background color
+      transparent = false,
     })
     vim.cmd.colorscheme("solarized-osaka")
   end,
@@ -70,8 +71,6 @@ local rose_pine = {
     })
 
     vim.cmd.colorscheme("rose-pine")
-
-    ColorMyPencils()
   end,
 }
 
@@ -81,4 +80,13 @@ local catppuccin = {
   config = function() vim.cmd.colorscheme("catppuccin-mocha") end,
 }
 
-return tokyonight
+local themes = {
+  catppuccin = catppuccin,
+  tokyonight = tokyonight,
+  rose_pine = rose_pine,
+  solarized = solarized,
+  nightly = nightly,
+  onedark = onedark,
+}
+
+return themes.tokyonight

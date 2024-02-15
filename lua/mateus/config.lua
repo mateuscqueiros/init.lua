@@ -1,10 +1,8 @@
-vim.opt.guicursor = ""
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 vim.opt.nu = true
 vim.wo.relativenumber = true
-
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
 
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
@@ -22,7 +20,6 @@ vim.opt.undofile = true
 
 vim.opt.termguicolors = true
 
-vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
 vim.opt.scrolloff = 8
@@ -30,7 +27,5 @@ vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
-
-vim.opt.colorcolumn = "80"
 
 vim.g.terminal_emulator = "tmux"

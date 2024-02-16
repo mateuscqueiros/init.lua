@@ -1,14 +1,14 @@
 return {
-  "nvim-lualine/lualine.nvim",
-  config = function()
-    require("lualine").setup({
+  { "vimpostor/vim-tpipeline" },
+  {
+    "nvim-lualine/lualine.nvim",
+    opts = {
       options = {
-        theme = "auto",
         globalstatus = true,
         component_separators = "",
         section_separators = "",
       },
-    })
-  end,
-  dependencies = { "nvim-tree/nvim-web-devicons" },
+    },
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+  },
 }

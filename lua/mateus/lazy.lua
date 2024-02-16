@@ -14,6 +14,6 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   spec = "mateus.plugins",
   change_detection = {
-    notify = false, -- get a notification when changes are found
+    notify = false,
   },
 })

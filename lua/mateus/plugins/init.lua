@@ -1,3 +1,6 @@
+-- then use it on whatever picker you want
+-- ex:
+
 return {
   {
     "nvim-lua/plenary.nvim",

@@ -9,6 +9,21 @@ local function organize_imports()
   end
 end
 
+local no_preview = function()
+  return require("telescope.themes").get_dropdown({
+    borderchars = {
+      { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
+      prompt = { "─", "│", " ", "│", "┌", "┐", "│", "│" },
+      results = { "─", "│", "─", "│", "├", "┤", "┘", "└" },
+      preview = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
+    },
+    width = 0.8,
+    previewer = false,
+    prompt_title = false,
+  })
+end
+
 return {
   organize_imports = organize_imports,
+  no_preview = no_preview,
 }

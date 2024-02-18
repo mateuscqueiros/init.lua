@@ -18,7 +18,7 @@ return {
     },
   },
   {
-    "shaunsingh/solarized.nvim",
+    "altercation/vim-colors-solarized",
     "Alexis12119/nightly.nvim",
     "rose-pine/neovim",
     "catppuccin/nvim",
